@@ -1,6 +1,16 @@
 package br.edu.ifms.universidade.dto;
 
-public class InstituicaoDto {
+import java.io.Serializable;
+
+import br.edu.ifms.universidade.model.Instituicao;
+
+public class InstituicaoDto implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	
 	private Integer id;
 	private String nome_instituicao;
@@ -9,14 +19,16 @@ public class InstituicaoDto {
 	public InstituicaoDto() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public InstituicaoDto(Integer id, String nome_instituicao, String cnpj) {
-		super();
-		this.id = id;
-		this.nome_instituicao = nome_instituicao;
-		this.cnpj = cnpj;
+	
+	
+	public InstituicaoDto(Instituicao obj) {
+		this.id = obj.getId();
+		this.nome_instituicao = obj.getNome_instituicao();
+		this.cnpj = obj.getCnpj();
+		
 	}
 
+	
 	public Integer getId() {
 		return id;
 	}

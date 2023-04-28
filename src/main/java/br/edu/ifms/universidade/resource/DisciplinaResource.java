@@ -61,7 +61,7 @@ public class DisciplinaResource {
 	@GetMapping
 	public ResponseEntity<List<DisciplinaDto>> findAll() {		
 		List<Disciplina> list = disciplina.buscarTodos();
-		List<DisciplinaDto> listDto = list.stream().map(obj -> new DisciplinaDto()).collect(Collectors.toList());
+		List<DisciplinaDto> listDto = list.stream().map(obj -> new DisciplinaDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
 	

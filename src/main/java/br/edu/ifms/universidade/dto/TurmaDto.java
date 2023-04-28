@@ -1,5 +1,7 @@
 package br.edu.ifms.universidade.dto;
 
+import br.edu.ifms.universidade.model.Turma;
+
 public class TurmaDto {
 	
 	private Integer id;
@@ -10,12 +12,14 @@ public class TurmaDto {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public TurmaDto(Integer id, int numero_turma) {
-		super();
-		this.id = id;
-		this.numero_turma = numero_turma;
+	
+	public TurmaDto(Turma obj) {
+		this.id = obj.getId();
+		this.numero_turma = obj.getNumero_turma();
+		
 	}
+
+	
 
 
 	public Integer getId() {

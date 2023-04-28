@@ -1,5 +1,7 @@
 package br.edu.ifms.universidade.dto;
 
+import br.edu.ifms.universidade.model.Aluno;
+
 public class AlunoDto {
 	
 	private Integer id;
@@ -11,16 +13,15 @@ public class AlunoDto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-
-
-
-	public AlunoDto(Integer id, String nomeAluno, int ra) {
-		super();
-		this.id = id;
-		this.nomeAluno = nomeAluno;
-		this.ra = ra;
+	public AlunoDto(Aluno obj) {
+		this.id = obj.getId();
+		this.nomeAluno = obj.getNomeAluno();
+		this.ra = obj.getRa();
 	}
+
+
+
+	
 
 
 

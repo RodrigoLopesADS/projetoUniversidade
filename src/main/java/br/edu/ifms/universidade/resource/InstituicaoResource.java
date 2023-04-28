@@ -60,7 +60,7 @@ public class InstituicaoResource {
 	@GetMapping
 	public ResponseEntity<List<InstituicaoDto>> findAll() {		
 		List<Instituicao> list = inst.buscarTodos();
-		List<InstituicaoDto> listDto = list.stream().map(obj -> new InstituicaoDto()).collect(Collectors.toList());
+		List<InstituicaoDto> listDto = list.stream().map(obj -> new InstituicaoDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
 	

@@ -42,30 +42,22 @@ public class DBService {
 		Instituicao inst1 = new Instituicao(null, "IFMS", "001.002.003/0004-56");
 		Instituicao inst2 = new Instituicao(null, "UFMS", "100.200.300/0004-56");
 		
-		Curso curso1 = new Curso(null, "ADS", "Tecnologia da Informação", null);
-		Curso curso2 = new Curso(null, "Metalurgia", "Mineração", null);
-		Curso curso3 = new Curso(null, "Sistemas de Informação", "Tecnologia da Informação", null);
-		Curso curso4 = new Curso(null, "Administração de Empresas", "Humanas", null);
+		Curso curso1 = new Curso(null, "ADS", "Tecnologia da Informação", inst1);
+		Curso curso2 = new Curso(null, "Metalurgia", "Mineração", inst1);
+		Curso curso3 = new Curso(null, "Sistemas de Informação", "Tecnologia da Informação", inst2);
+		Curso curso4 = new Curso(null, "Administração de Empresas", "Humanas", inst2);
 		
-		Turma turma1 = new Turma(null, 123, null);
-		Turma turma2 = new Turma(null, 456, null);
-		Turma turma3 = new Turma(null, 789, null);
-		Turma turma4 = new Turma(null, 147, null);
-		Turma turma5 = new Turma(null, 258, null);
-		Turma turma6 = new Turma(null, 369, null);
-		Turma turma7 = new Turma(null, 159, null);
-		Turma turma8 = new Turma(null, 357, null);
-		
-		
-		Aluno aluno1 = new Aluno(null, "Rodrigo", 321);
-		Aluno aluno2 = new Aluno(null, "Bruno", 654);
-		Aluno aluno3 = new Aluno(null, "Mariana", 987);
-		Aluno aluno4 = new Aluno(null, "Alexandre", 741);
-		Aluno aluno5 = new Aluno(null, "Kenely", 852);
-		Aluno aluno6 = new Aluno(null, "Fabiola", 963);
-		Aluno aluno7 = new Aluno(null, "Carlos", 753);
-		Aluno aluno8 = new Aluno(null, "Lucas", 951);
-		Aluno aluno9 = new Aluno(null, "Marcelo", 397);
+		Turma turma1 = new Turma(null, 123, curso1);
+		Turma turma2 = new Turma(null, 456, curso1);
+		Turma turma3 = new Turma(null, 789, curso2);
+		Turma turma4 = new Turma(null, 147, curso2);
+		Turma turma5 = new Turma(null, 258, curso3);
+		Turma turma6 = new Turma(null, 369, curso3);
+		Turma turma7 = new Turma(null, 159, curso4);
+		Turma turma8 = new Turma(null, 357, curso4);
+//		
+//		
+//		
 		
 		Disciplina disc1 = new Disciplina(null, "Frames 2", "80");
 		Disciplina disc2 = new Disciplina(null, "Sistemas Distribuidos", "60");
@@ -77,9 +69,7 @@ public class DBService {
 		Disciplina disc8 = new Disciplina(null, "Quimica", "100");
 		Disciplina disc9 = new Disciplina(null, "Gestão de Pessoas", "100");
 		
-		
-		
-		
+//		
 		turma1.getDisciplinas().addAll(Arrays.asList(disc2, disc4));
 		turma2.getDisciplinas().addAll(Arrays.asList(disc1, disc3, disc5));
 		turma3.getDisciplinas().addAll(Arrays.asList(disc6, disc8));
@@ -88,9 +78,21 @@ public class DBService {
 		turma6.getDisciplinas().addAll(Arrays.asList(disc1, disc3, disc5));
 		turma7.getDisciplinas().addAll(Arrays.asList(disc6, disc9));
 		turma8.getDisciplinas().addAll(Arrays.asList(disc9));
+//		
+//		
+//		
+//		
+		Aluno aluno1 = new Aluno(null, "Rodrigo", 321);
+		Aluno aluno2 = new Aluno(null, "Bruno", 654);
+		Aluno aluno3 = new Aluno(null, "Mariana", 987);
+		Aluno aluno4 = new Aluno(null, "Alexandre", 741);
+		Aluno aluno5 = new Aluno(null, "Kenely", 852);
+		Aluno aluno6 = new Aluno(null, "Fabiola", 963);
+		Aluno aluno7 = new Aluno(null, "Carlos", 753);
+		Aluno aluno8 = new Aluno(null, "Lucas", 951);
+		Aluno aluno9 = new Aluno(null, "Marcelo", 397);
 		
-		
-		
+//		
 		disc1.getAlunos().addAll(Arrays.asList(aluno1, aluno2, aluno6, aluno7, aluno8));
 		disc2.getAlunos().addAll(Arrays.asList(aluno3, aluno4, aluno5, aluno9));
 		disc3.getAlunos().addAll(Arrays.asList(aluno1, aluno2, aluno6, aluno7, aluno8));
@@ -100,13 +102,23 @@ public class DBService {
 		disc7.getAlunos().addAll(Arrays.asList(aluno3, aluno4, aluno5, aluno9));
 		disc8.getAlunos().addAll(Arrays.asList(aluno1, aluno2, aluno4, aluno7, aluno8, aluno9));
 		disc9.getAlunos().addAll(Arrays.asList(aluno3, aluno5, aluno6));
+//		
+//		
 		
+		
+		
+		
+//		
+//		
+//		
+//		
+		
+		instituicaoRepository.saveAll(Arrays.asList(inst1, inst2));
+		cursoRepository.saveAll(Arrays.asList(curso1, curso2, curso3, curso4));
 		alunoRepository.saveAll(Arrays.asList(aluno1, aluno2, aluno3, aluno4, aluno5, aluno6, aluno7, aluno8, aluno9));
 		disciplinaRepository.saveAll(Arrays.asList(disc1, disc2, disc3, disc4, disc5, disc6, disc7, disc8, disc9));
 		turmaRepository.saveAll(Arrays.asList(turma1, turma2, turma3, turma4, turma5, turma6, turma7, turma8));
 		
-		cursoRepository.saveAll(Arrays.asList(curso1, curso2, curso3, curso4));
-		instituicaoRepository.saveAll(Arrays.asList(inst1, inst2));
 		
 		
 		
@@ -118,14 +130,7 @@ public class DBService {
 		
 		
 		
-		
-		/*Aluno(Integer id, String nomeAluno, int ra)
-		 *Curso(Integer id, String nome_curso, String área_atuacao, Instituicao instituicao)
-		 *Disciplina(Integer id, String nomeDisciplina, String cargaHoraria)
-		 *Instituicao(Integer id, String nome_instituicao, String cnpj)
-		 *Turma(Integer id, int numero_turma, Curso curso)
-		
-		*/
+
 		
 		
 	}

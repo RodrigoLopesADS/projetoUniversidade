@@ -61,7 +61,8 @@ public class TurmaResource {
 	@GetMapping
 	public ResponseEntity<List<TurmaDto>> findAll() {		
 		List<Turma> list = turma.buscarTodos();
-		List<TurmaDto> listDto = list.stream().map(obj -> new TurmaDto()).collect(Collectors.toList());
+		System.out.println(list);
+		List<TurmaDto> listDto = list.stream().map(obj -> new TurmaDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
 	

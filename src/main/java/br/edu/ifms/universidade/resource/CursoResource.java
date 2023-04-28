@@ -61,7 +61,7 @@ public class CursoResource {
 	@GetMapping
 	public ResponseEntity<List<CursoDto>> findAll() {		
 		List<Curso> list = curso.buscarTodos();
-		List<CursoDto> listDto = list.stream().map(obj -> new CursoDto()).collect(Collectors.toList());
+		List<CursoDto> listDto = list.stream().map(obj -> new CursoDto(obj)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(listDto);
 	}
 	

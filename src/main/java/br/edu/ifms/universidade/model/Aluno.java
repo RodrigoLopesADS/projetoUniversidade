@@ -23,6 +23,8 @@ public class Aluno implements Serializable {
 	private String nomeAluno;
 	private int ra;
 	
+	
+	
 	@ManyToMany(mappedBy = "alunos")
 	private List<Disciplina> disciplinas = new ArrayList<>();
 	

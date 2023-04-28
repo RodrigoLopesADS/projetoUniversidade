@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,16 +27,20 @@ public class Curso implements Serializable {
 	private String nome_curso;
 	private String área_atuacao;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_instituicao")
 	private Instituicao instituicao;
+	
 	
 	@OneToMany(mappedBy = "curso")
 	private List<Turma> turma = new ArrayList<>();
 	
 	public Curso() {
-		// TODO Auto-generated constructor stub
+		
 	}
+	
+	
 
 	public Curso(Integer id, String nome_curso, String área_atuacao, Instituicao instituicao) {
 		super();

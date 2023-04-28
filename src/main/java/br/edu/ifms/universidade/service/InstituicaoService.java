@@ -3,6 +3,7 @@ package br.edu.ifms.universidade.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifms.universidade.dto.InstituicaoDto;
@@ -13,7 +14,7 @@ import br.edu.ifms.universidade.service.exception.ObjectNotFoundException;
 @Service
 public class InstituicaoService {
 	
-	
+	@Autowired
 	private InstituicaoRepository instituicaoRepository;
 	
 	

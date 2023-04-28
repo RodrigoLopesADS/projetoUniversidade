@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,11 +27,12 @@ public class Turma implements Serializable {
 	private Integer id;
 	private int numero_turma;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_curso")
 	private Curso curso;
 	
-	
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(
 			name = "Turma_Disciplina",

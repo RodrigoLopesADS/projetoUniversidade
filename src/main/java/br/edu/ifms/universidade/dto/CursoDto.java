@@ -1,5 +1,7 @@
 package br.edu.ifms.universidade.dto;
 
+import br.edu.ifms.universidade.model.Curso;
+
 public class CursoDto {
 	
 	private Integer id;
@@ -10,14 +12,17 @@ public class CursoDto {
 	public CursoDto() {
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public CursoDto(Integer id, String nome_curso, String área_atuacao) {
-		super();
-		this.id = id;
-		this.nome_curso = nome_curso;
-		this.área_atuacao = área_atuacao;
+	
+	public CursoDto(Curso obj) {
+		
+		this.id = obj.getId();
+		this.nome_curso = obj.getNome_curso();
+		this.área_atuacao = obj.getÁrea_atuacao();
+		
 	}
+
+
+	
 
 
 	public Integer getId() {

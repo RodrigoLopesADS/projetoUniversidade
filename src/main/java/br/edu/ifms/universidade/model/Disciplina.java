@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,9 +27,13 @@ public class Disciplina implements Serializable {
 	private String nomeDisciplina;
 	private String cargaHoraria;
 	
+	
+	
 	@ManyToMany(mappedBy = "disciplinas")
 	private List<Turma> turmas = new ArrayList<>();
 	
+	
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(
 			name = "Aluno_Disciplina",
