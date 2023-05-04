@@ -52,8 +52,8 @@ public class AlunoResource {
 		return ResponseEntity.noContent().build();
 	}	
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@RequestBody Aluno obj,@PathVariable Integer id){
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<Void> delete(@RequestBody Aluno obj, @PathVariable Integer id){
 		aluno.remover(id);
 		return ResponseEntity.noContent().build();
 	}

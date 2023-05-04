@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class Aluno implements Serializable {
 	
 	
 	
-	@ManyToMany(mappedBy = "alunos")
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "alunos")
 	private List<Disciplina> disciplinas = new ArrayList<>();
 	
 	

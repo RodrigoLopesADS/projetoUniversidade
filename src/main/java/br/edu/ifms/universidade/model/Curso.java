@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Curso implements Serializable {
 	private Instituicao instituicao;
 	
 	
-	@OneToMany(mappedBy = "curso")
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "curso")
 	private List<Turma> turma = new ArrayList<>();
 	
 	public Curso() {
